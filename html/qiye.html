@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>login</title>
+</head>
+<body>
+    <form>
+        <table cellpadding="5" border="1" cellspacing="0" align="center">
+            <caption>
+                <h1>企业账户注册</h1>  
+            </caption>
+            <tr>
+                <td width="100" align="right">
+                    <img src="images/star.png" />会员名
+                </td>
+                <td>
+                    <input type="text" name="username"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <img src="images/star.png" />登录密码
+                </td>
+                <td>
+                    <input type="password" name="password1"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <img src="images/star.png" />重复密码
+                </td>
+                <td>
+                    <input type="password" name="password2" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <img src="images/star.png" />联系人姓名
+                </td>
+                <td>
+                    <input type="text" name="contact" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <img src="images/star.png" />企业名称
+                </td>
+                <td>
+                    <input type="text" name="enterprise"/>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <img src="images/star.png" />贸易身份
+                </td>
+                <td>
+                    <input type="radio" name="trade" value="1" checked/>我要销售
+                    <input type="radio" name="trade" value="2" />我要采购
+                    <input type="radio" name="trade" value="3" />两者都是
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <img src="images/star.png" />电话号码
+                </td>
+                <td>
+                    <select name="phone-area">
+                        <option value="0">中国大陆 +86</option>
+                        <option value="1">中国台湾 +886</option>
+                        <option value="2">中国香港 +852</option>
+                        <option value="3">马来西亚 +60</option>
+                        <option value="4">新加坡 +65</option>
+                    </select>
+                    <input  type="text" name="phone-number" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" />
+                    创建网站账号的同时，我同意遵守：
+                    <br/>
+                    <a href="https://rule.1688.com/policy/terms.htm?tracelog=aliguize_hyjl">《阿里巴巴服务条款》</a>
+                    及
+                    <a href="https://rule.1688.com/policy/privacy.html">《隐私声明》</a>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="同意并注册" name="su" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

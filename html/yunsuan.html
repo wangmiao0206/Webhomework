@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>任务七：DOM操作和样式控制</title>
+		<style>
+        	#en{
+        		border:1px solid #C0C0C0;
+        		height: 600px;
+                width: 500px;
+                background-repeat: no-repeat;
+            	margin: 0 auto;
+            	text-align:center;
+        	}
+        	#adiv{
+        		height: 440px;
+                width: 340px;
+                padding:80px; 
+        		border:1px solid #C0C0C0;
+                background-repeat: no-repeat;
+            	margin: 0 auto;
+            	text-align:center;
+            	margin-top:-602px;
+            	background-color: #F0FFFF;
+        	}
+        	#arecord{
+        		height: 300px;
+                width: 120px;
+        	}
+        	.abutton{
+        		margin-top:100px;
+        		margin-bottom: 40px;
+        	}
+        	#ap1{
+        		display: block;
+        		float: left;	
+        	}
+        	#ap2{
+        		display: block;
+        		float: right;	
+        	}
+        	#ah3{
+        		display: block;
+        		float: left;	
+        		margin-top: 20px;
+        	}
+        	#asub{
+        		display: block;
+        		float: left;
+        		margin-top: 20px;
+        	}
+        	#aresult{
+        		width: 200px;	
+        	}
+        	#atextarea{
+        		overflow: auto;
+        		margin: 0 auto;
+        		height: 300px;
+        		width: 300px;
+        	}
+        	.printdiv{
+        		width: 270px;
+        		height: 20px;
+        		float: left;
+        	}
+        	.ap3{
+        		float: left;
+        	}
+        	.ap4{
+        		float: right;
+        	}
+    	</style>
+	</head>
+	<body>
+		<div id="en">
+			<input type="button" value="开始答题" id="start" class="abutton" onclick="astart()">
+			<input type="button" value="答题记录" id="cheat" class="abutton" onclick="acheat()">	
+			</br>
+			
+		</div>
+		<script>
+			var t = 30;
+			var thescore = 0;
+			var Account;
+			var arr = new Array();
+			for(var k = 0; k < 100; k++){
+				arr[k] = new Array();
+			}
+			var sum = 0;
+			function asubs(){
+				
+				arr[sum][2] = document.getElementById("aresult").value.substr(0, 3);
+				if(arr[sum][2] == arr[sum][0] + arr[sum][1]){
+					thescore += 10;
+					var e = document.getElementById("ascore");
+					e.innerHTML = thescore;
+					arr[sum][3] = "正确";
+
+				}else{
+					arr[sum][3] = "错误";
+				}
+				sum++;
+				var h = amath();
+				var b = document.getElementById("adiv");
+				var c = document.getElementById("ah3");
+				b.replaceChild(h,c);
+				h.setAttribute("id", "ah3" );
+				document.getElementById("aresult").focus();
+			}
+
+			function amath(){
+				var h3 = document.createElement("h3");
+				var x = parseInt(100*Math.random());
+				var y = parseInt(100*Math.random());
+				arr[sum][0] = x;
+				arr[sum][1] = y;
+				h3.innerHTML = x + " + " + y + " = ";
+				var result = document.createElement("input");
+				result.setAttribute("id", "aresult" );
+				h3.appendChild(result);
+				h3.setAttribute("id", "ah3" );
+				return h3;
+			}
+			function astart(){
+				if(document.getElementById("atextarea")){
+					document.getElementById("atextarea").parentNode.removeChild(document.getElementById("atextarea"));
+				}
+				document.getElementById("start").setAttribute("type", "hidden" );
+				document.getElementById("cheat").setAttribute("type", "hidden" );
+				var div = document.createElement("div");
+				div.setAttribute("id", "adiv" );
+				document.body.appendChild(div);
+				var p1 = document.createElement("p1");
+				p1.innerHTML = "倒计时：";
+				p1.setAttribute("id", "ap1" );
+				document.getElementById("adiv").appendChild(p1);
+				var time = document.createElement("span");
+				time.setAttribute("id", "atime" );
+				p1.appendChild(time);
+
+				acttime(Account);
+				var p2 = document.createElement("p2");
+				p2.innerHTML = "得分：";
+				p2.setAttribute("id", "ap2" );
+				var score = document.createElement("span");
+				score.setAttribute("id", "ascore" );
+				p2.appendChild(score);
+				score.innerHTML = thescore;
+				document.getElementById("adiv").appendChild(p2);
+				document.getElementById("adiv").appendChild(amath());
+				var asubmit = document.createElement("input");
+				asubmit.setAttribute("type", "button" );
+				asubmit.setAttribute("id", "asub" );
+				asubmit.setAttribute("value", "提交答案" );
+				asubmit.setAttribute("onclick", "asubs()");
+				document.getElementById("adiv").appendChild(asubmit);
+				
+			}
+			function acttime(Account){
+				var spanTime = document.getElementById("atime");
+				--t;
+				spanTime.innerHTML = t + "s";
+				if (t == -1) {
+					clearTimeout(Account);
+					alert("答题结束");
+					t = 30;
+					thescore = 0;
+					var a = document.getElementById("adiv")
+					document.body.removeChild(a);
+					document.getElementById("start").setAttribute("type", "submit" );
+					document.getElementById("cheat").setAttribute("type", "submit" );
+				}else{
+					Account = setTimeout("acttime()", 1000);
+				}
+			}
+			function acheat(){
+				if(sum != 0 && !document.getElementById("atextarea")){
+					var i;
+					var en = document.getElementById("en");
+					var record = document.createElement("div");
+					
+					record.setAttribute("id", "atextarea" );
+					for(i = 0; i < sum; i++){
+						var div = document.createElement("div");
+						div.setAttribute("class", "printdiv" );
+						var p3 = document.createElement("p3");
+						var p4 = document.createElement("p4");
+						p3.innerHTML = arr[i][0] + "+" + arr[i][1] + "=" + arr[i][2];
+						p4.innerHTML = "结果："+ arr[i][3];
+						p3.setAttribute("class", "ap3" );
+						p4.setAttribute("class", "ap4" );
+						div.appendChild(p3);
+						div.appendChild(p4);
+						record.appendChild(div);
+					}
+					en.appendChild(record);
+				}
+			}
+		</script>
+	</body>
+<html>

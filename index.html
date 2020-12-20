@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Webhomework</title>
+    <style>
+        *{
+                margin: 0 auto;
+                padding: 0;
+            }
+            
+            #outer{
+                width: 1100px;
+                height: 250px;
+                background-color: rgba(240,255,255,0.5) ;
+                margin: 50px auto;
+                position: relative;
+                overflow: hidden;
+                
+            }
+            #imgList{
+                list-style: none;
+                position: absolute;
+            }
+            
+            #imgList li{
+                float: left;
+            }
+            
+            #nav{
+                position: absolute;
+                bottom: 20px;
+                left: 200px;    
+            }
+            #nav a{
+                float: left;
+                width: 15px;
+                height: 15px;
+                background-color: darkgrey;
+                margin: 0 5px ;
+                opacity: 0.5;
+            }
+            .bannertu{
+                width: 1100px;
+                height: 250px;
+            }
+        .slider-bar {
+            position: absolute;
+            left: 47%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 160px;
+            cursor: pointer;
+        }
+        .banner {
+            width: 1100px;
+            margin: 10px auto;
+            height: 250px;
+        }
+        .main {
+            width: 1000px;
+            margin: 10px auto;
+            height: 700px;
+            background-color: skyblue;
+            padding: 50px;
+        }
+        #back {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+        #time{
+            height:30px;
+        }
+        span{
+            display: block;
+            margin-top: 10px;
+        }
+        span img{
+            width: 40px;
+            height: 40px;
+        }
+        h1{
+            line-height:2em;
+        }
+        #center{ 
+            width:960px; 
+            height:450px; 
+            border:1px solid #c9c9c9;
+            margin:0 auto;
+            background-image: url("imgs/2.png");
+        }
+        #div1{ 
+            position:relative; 
+            width:960px; 
+            height:400px;  
+            margin:auto; 
+            overflow:hidden; 
+        }
+        #div1 a{ 
+            position:absolute; 
+            color:#fff; 
+            text-decoration:none; 
+            top:260px; display:block; 
+            border:solid 1px #000; 
+            filter:alpha(opacity:80); 
+            opacity:0.8; 
+            font-size:14px; 
+            padding:3px 5px; 
+            font-family:arial;
+        }
+        #div1 a:hover { 
+            filter:alpha(opacity:100); 
+            opacity:1; 
+            font-weight:bold; 
+            font-size:16px; }
+    </style>
+</head>
+<body style="height:3000px;">
+    <div class="banner" id="outer">
+			<ul id="imgList">
+				<li><img src="imgs/1.jpg" class="bannertu"></li>
+				<li><img src="imgs/14.jpg" class="bannertu"></li>
+				<li><img src="imgs/3.jpg" class="bannertu"></li>
+				<li><img src="imgs/4.jpg" class="bannertu"></li>
+				<li><img src="imgs/5.jpg" class="bannertu"></li>
+				<li><img src="imgs/1.jpg" class="bannertu"></li>
+			</ul>
+			<div id="nav">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		
+    </div>
+    <div class="main">
+        <div id="time"></div>
+        <h1 align="center">Web开发学习即将告一段落，回顾自己所学的知识，为该阶段Web学习暂时划上一个完整的句号</h1>
+        <div id="center">
+                <div id="div1">
+                    <a href="http://html5.huceo.com/wzq/" target="_blank">五子棋</a>
+                    <a href="html/yunsuan.html" target="_blank">100以内加减法练习</a>
+                    <a href="https://wangmiao0206.github.io/xueli/" target="_blank">雪梨在线教育平台</a>
+                    <a href="html/jisuanqi.html" target="_blank">计算器</a>
+                    <a href="html/zhuce.html" target="_blank">注册</a>
+                    <a href="html/suijidianming.html" target="_blank">随机点名1</a>
+                    <a href="html/sidamingzhu.html" target="_blank">四大名著</a>
+                    <a href="html/qiye.html" target="_blank">企业账户注册</a>
+                    <a href="html/shidayaowen.html" target="_blank">师大要闻</a>
+                    <a href="html/web_css33.html" target="_blank">随机点名2</a>
+                    <a href="html/web_css34.html" target="_blank">各种3D</a>
+                    <a href="html/web_css32.html" target="_blank">动画1</a>
+                    <a href="html/web_css31.html" target="_blank">动画2</a>
+                    <a href="https://www.baidu.com/baidu?tn=monline_7_dg&ie=utf-8&wd=%E9%BB%91%E6%B4%9E" target="_blank">黑洞(滑稽)</a>
+                    <a href="https://www.w3school.com.cn/" target="_blank">W3school</a>
+                    <a href="https://wangmiao0206.github.io/webtext/" target="_blank">师大官网(简易版)</a>
+                </div>
+        </div>
+         <h1 align="center">以上是Web开发课程的平时作业和一些有意思的网站</h1>
+    </div>
+    <div class="slider-bar">
+        <span><a href="https://github.com/wangmiao0206" target="_blank"><img src="imgs/github.png" alt="#" ></a></span>
+        <span><a href="https://im.qq.com/" target="_blank"><img src="imgs/qq.png" alt="#" ></a></span>
+        <span id="back" class="goBack"><img src="imgs/ding.png" alt="#"></span>
+    </div>
+    <script>
+        var timer;
+        var index =0;
+    	function bannercome(){
+                imgList =document.getElementById("imgList");
+                imgArr = document.getElementsByTagName("img");              
+                nav = document.getElementById("nav");
+                outer = document.getElementById("outer");
+                allA = document.getElementsByTagName("a");
+                imgList.style.width=(parseInt(getStyle(imgArr[0],"width"))+10)*imgArr.length+"px";
+                nav.style.left=(outer.offsetWidth-nav.offsetWidth)/2;
+                allA[index].style.backgroundColor="black";
+                for(var i=0;i<allA.length;i++){
+                    allA[i].num=i;
+                    allA[i].onclick=function(){
+                        clearInterval(timer);
+                        index=this.num;
+                        setA();
+                        //alert(index);
+                        move(imgList,"left",-1100*index,30,function(){
+                            autoChange();
+                        });
+                    };
+                }
+                autoChange();    
+            }
+        function setA(){
+            if(index>=imgArr.length-4){
+                index=0;
+                imgList.style.left=0;
+            }
+            for(var i=0;i<allA.length;i++){
+                allA[i].style.backgroundColor=color();
+                allA[index].style.backgroundColor="black";
+            }
+        }
+        function autoChange () {
+            timer = setInterval(function(){
+                index++;
+                index=index%imgArr.length;
+                move(imgList,"left",-1100*index,30,function(){
+                    setA();
+                });
+            },3000);
+        }
+        function getStyle(obj,name){
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name];
+            }else{
+                return obj.currentStyle[name];
+            }
+        }
+
+        function move(obj,attr,target,speed,callback){
+            clearInterval(obj.timer);
+            var current = parseInt(getStyle(obj,attr));
+            if(current>target){
+                speed=-speed;
+            }
+            obj.timer=setInterval(function(){
+                var oldValue = parseInt(getStyle(obj,attr));
+                var newValue = oldValue + speed;
+                if(speed<0&&newValue<target||speed>0&&newValue>target){
+                    newValue =target;
+                }
+                obj.style[attr]=newValue+"px";
+                if(newValue==target){
+                    clearInterval(obj.timer);
+                    callback&&callback();
+                }
+            },20);
+        }
+        bannercome();
+        window.onload=function(){
+            var oDiv=document.getElementById('div1');
+            var aA=oDiv.getElementsByTagName('a');
+            var i=0;
+            for(i=0;i<aA.length;i++)
+            {
+                aA[i].pause=1;
+                aA[i].time=null;
+                initialize(aA[i]);
+                aA[i].onmouseover=function()
+                {
+                    this.pause=0;   
+                };
+                aA[i].onmouseout=function()
+                {
+                    this.pause=1;
+                };
+            }
+            setInterval(starmove,24);
+            function starmove()
+            {
+                for(i=0;i<aA.length;i++)
+                {
+                    if(aA[i].pause)
+                    {
+                        domove(aA[i]);
+                    }
+                }
+            }
+            function domove(obj)
+            {
+                if(obj.offsetTop<=-obj.offsetHeight)
+                {
+                    obj.style.top=oDiv.offsetHeight+"px";
+                    initialize(obj);
+                }
+                else
+                {
+                    obj.style.top=obj.offsetTop-obj.ispeed+"px";    
+                }
+            }
+            function initialize(obj)
+            {
+                var iLeft=parseInt(Math.random()*oDiv.offsetWidth);
+                var scale=Math.random()*1+1;
+                var iTimer=parseInt(Math.random()*1500);
+                obj.pause=0;
+
+                obj.style.fontSize=12*scale+'px';
+
+                if((iLeft-obj.offsetWidth)>0)
+                {
+                    obj.style.left=iLeft-obj.offsetWidth+"px";
+                }
+                else
+                {
+                    obj.style.left=iLeft+"px";
+                }
+                clearTimeout(obj.time);
+                obj.time=setTimeout(function(){
+                    obj.pause=1;
+                },iTimer);
+                obj.ispeed=Math.ceil(Math.random()*4)+1;
+            }
+        };
+        function alert_display_block(msg){
+            var aw=($(window).outerWidth()-$("#define_my_alert").width())/2;
+            var ah=($(window).outerHeight()-$("#define_my_alert").height())/2;  
+            $("#define_my_alert .alert_msg").html(msg);
+            $("#define_my_alert_bg").fadeIn("fast");
+            $("#define_my_alert").fadeIn("fast").css({ top:$(window).scrollTop()+ah+"px",left:aw+"px"});
+        }
+        function gettime(){
+            setInterval(function(){
+            fnDate();
+            },1000);
+        }
+
+            function fnDate(){
+            var oDiv=document.getElementById("time");
+            var date=new Date();
+            var year=date.getFullYear();//当前年份
+            var month=date.getMonth();//当前月份
+            var data=date.getDate();//天
+            var hours=date.getHours();//小时
+            var minute=date.getMinutes();//分
+            var second=date.getSeconds();//秒
+            var time=year+"-"+fnW((month+1))+"-"+fnW(data)+" "+fnW(hours)+":"+fnW(minute)+":"+fnW(second);
+            oDiv.innerHTML=time;
+        }
+        function fnW(str){
+            var num;
+            str>10?num=str:num="0"+str;
+            return num;
+        } 
+        gettime();  
+        var sliderbar = document.querySelector('.slider-bar');
+        var banner = document.querySelector('.banner');
+        var bannerTop = banner.offsetTop; 
+        var sliderbarTop = sliderbar.offsetTop - bannerTop; 
+        var main = document.querySelector('.main');
+        var goBack = document.querySelector('.goBack');
+        var mainTop = main.offsetTop;  
+        document.addEventListener('scroll', function() {
+            if(window.pageYOffset >= bannerTop) {    
+                sliderbar.style.position = 'fixed';   
+                sliderbar.style.top = sliderbarTop + 'px';
+            } else {
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = '300px';
+            }
+
+            if(window.pageYOffset >= mainTop) {    
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+
+        });
+        sliderbar.addEventListener('click', function() {
+            bannercome();
+            animate(window, 0);
+        })
+
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer);  
+            obj.timer = setInterval(function() {
+                var step = (target - window.pageYOffset) / 10;  
+                step = step > 0 ? Math.ceil(step) : Math.floor(step); 
+                if(window.pageYOffset == target) { 
+                    clearInterval(obj.timer);
+                    callback && callback();
+                }
+                window.scroll(0, window.pageYOffset + step);
+            }, 15);
+        }
+        function color() {
+            var r = parseInt(Math.random() * 255);
+            var g = parseInt(Math.random() * 255);
+            var b = parseInt(Math.random() * 255);
+            var a = Math.random() * 0.7 + 0.3;
+            a = a.toFixed(2);
+            var rgba = "rgba(" + r + "," + g + "," + b + "," + a + ")";
+
+            return rgba;
+        }
+        
+    </script>
+</body>
+</html> 

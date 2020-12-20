@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>任务六：DOM模型</title>
+        <style type="text/css">
+            #entirety{
+                height: 600px;
+                width: 1800px;
+                background-repeat: no-repeat;
+                position:absolute;
+                top:50%;
+                left:50%;
+                margin:-225px 0 0 -400px;
+            }
+            .ainput{
+                width:350px;
+                height: 70px;
+            }
+            .user{
+                padding:10px;
+                margin:5px;
+                width: 320px;
+                float: right;
+                border:1px solid #C0C0C0;
+            }
+            .tip{
+                font-size: 10px;
+                margin-left: 5px;
+            }
+            #reminder{
+                height: 500px;
+                width: 800px;
+                float: right;
+                margin-top: -120px;
+                margin-right: 450px;
+                color: red;
+                font-size: 20px;
+            }
+            .content{
+                width: 400px;
+                height: 65px;
+            }
+            input{
+                width: 100px;
+                height: 20px;
+                margin-right:130px;
+                display: block;            
+                float: right;
+                border-style: none;
+                border-left: white;
+                outline: 0;
+            }
+            button{  
+                width: 345px;  
+                height: 60px;  
+                margin-top: 20px;  
+                background:red;   
+                border:1px solid;
+                font-weight: 100;  
+                color: white;       
+            }
+            span{
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="entirety">    
+            <div class="ainput">
+                <div class="user">
+                    <span>用&nbsp;&nbsp;户&nbsp;&nbsp;名</span><input type="text"  value="" size="50" name="" onfocus="onfocus1()" onblur="onblur1()" id="text">
+                </div>  
+                <div class="tip" style="color:grey">
+                    <p1>&nbsp;&nbsp;&nbsp;</p1>
+                </div>
+            </div>
+            <div class="ainput">
+                <div class="user">
+                    <span>设置密码</span><input type="password"  value="" size="50" name="" onfocus="onfocus2()" onblur="onblur2()" id="password">
+                </div>  
+                <div class="tip" style="color:grey">
+                    <p2>&nbsp;&nbsp;&nbsp;</p2>
+                </div>
+            </div>
+            <button onclick="onclick1()" id="button"><span>立即注册</span></button>
+            <div id="reminder">
+                <div class="content">
+                    <p3>&nbsp;&nbsp;&nbsp;</p3>
+                </div>
+                <div class="content">
+                    <p4>&nbsp;&nbsp;&nbsp;</p4>
+                </div>
+                <div class="content">
+                    <p5>&nbsp;&nbsp;&nbsp;</p5>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function onfocus1(){
+                var a1 =document.getElementsByTagName('p1')[0];
+                a1.innerHTML="支持中文数字";
+            }
+            function onblur1(){
+                var a2 =document.getElementsByTagName('p1')[0];
+                if(document.getElementById("text").value == ""){               
+                    a2.innerHTML="用户名不能为空";
+                }
+                else{
+                    a2.innerHTML="&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            function onfocus2(){
+                var b1 =document.getElementsByTagName('p2')[0];
+                b1.innerHTML="建议使用两种字符组合";
+            }function onblur2(){
+                var b2 =document.getElementsByTagName('p2')[0];
+                if(document.getElementById("password").value == ""){
+                    b2.innerHTML="密码不能为空";
+                }
+                else{
+                    b2.innerHTML="&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            function onclick1(){
+                var x = document.getElementById("text").value;
+                var y = document.getElementById("password").value;
+                if(x != "" && y != ""){
+                    var c = document.getElementsByTagName('p3')[0];
+                    c.innerHTML="注册成功！";
+                    var d =document.getElementsByTagName('p4')[0];
+                    d.innerHTML="用户名："+x;
+                    var e =document.getElementsByTagName('p5')[0];
+                    e.innerHTML="密码："+y;
+                }
+            } 
+        </script>
+    </body>
+</html>

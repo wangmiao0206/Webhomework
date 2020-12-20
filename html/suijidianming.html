@@ -1,0 +1,25 @@
+<button onclick="inputName()">输入名字</button>
+    <button onclick="selectName()">点名</button>
+    <script>
+        var nameList = [],
+            i = 0,
+            timer,
+            isSelect = false;
+        function inputName(){           //输入名字  10分
+            nameList = prompt('以英文逗号隔开的若干名字').split(',');
+            console.log(nameList)
+        }
+        function selectName(){
+            if(isSelect){                    // 判断并停止点名  20分
+                clearInterval(timer);
+            }else{
+                timer = setInterval(function(){   // 循环点名  30分
+                    console.log(nameList[i++])
+                    if(i==nameList.length){
+                        i=0
+                    }
+                }, 500);
+            }
+            isSelect = !isSelect;
+        }
+    </script>

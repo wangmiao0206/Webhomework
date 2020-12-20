@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>点名</title>
+	<style>
+		#box{
+			font-size: 150px;
+			text-align: center;
+			line-height: 500px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="box">按空格键开始滚动</div>
+	
+</body>
+
+<script type="text/javascript">
+	var str = `王淼
+	王宇烜
+	赵忠正
+	郑美鹏
+	白一波
+	戴钦岩
+	赵雨
+	李永注
+`;
+	var arr = str.split('\n');
+	var box = document.getElementById('box');
+	var i = 0;
+	var flag = true;
+	var timer;
+	
+	function loop(){
+		i>=arr.length&&(i=0);
+		if(arr.length<=0){
+			box.innerHTML = '都点过了哦';
+		}else{
+			box.innerHTML = arr[i++];
+		}
+	}
+	document.onkeydown = function(e){
+		if(e.keyCode!=32){
+			return; 
+		}
+		if(flag){
+			timer = setInterval(loop,10);
+		}else{
+			clearInterval(timer);
+			arr.splice(i-1,1);
+		}
+		flag = !flag;
+	}   
+</script>
+<html>
